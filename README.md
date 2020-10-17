@@ -1,68 +1,152 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Starter 
+A starter repo for building CUNY Tech Prep projects with React, Express.js, and Sequelize.js
 
-## Available Scripts
+## Stack
 
-In the project directory, you can run:
+*API*
 
-### `npm start`
+- express.js
+- sequelize.js
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+*React client*
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Built using `create-react-app` and configured to work with the api.
+- Bootstrap 4.x added to `/client/public/index.html`
+- React Router
 
-### `npm test`
+*Project Structure*
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<pre>
+.
+├── README.md
+├── <strong>api</strong>
+│   ├── app.js
+│   ├── <strong>config</strong>
+│   │   └── config.json
+│   ├── <strong>controllers</strong>
+│   │   ├── appConfig.js
+│   │   ├── index.js
+│   │   └── posts.js
+│   └── <strong>models</strong>
+│       ├── index.js
+│       └── post.js
+├── <strong>client</strong>
+│   ├── README.md
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── <strong>public</strong>
+│   │   ├── favicon.ico
+│   │   ├── index.html
+│   │   ├── logo192.png
+│   │   ├── logo512.png
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   └── <strong>src</strong>
+│       ├── App.css
+│       ├── App.js
+│       ├── App.test.js
+│       ├── <strong>components</strong>
+│       │   ├── Loading.js
+│       │   └── Post.js
+│       ├── index.css
+│       ├── index.js
+│       ├── logo.svg
+│       ├── <strong>pages</strong>
+│       │   ├── AboutUsPage.js
+│       │   ├── PostFormPage.js
+│       │   ├── PostsListPage.js
+│       │   └── ShowPostPage.js
+│       └── serviceWorker.js
+├── package-lock.json
+└── package.json
+</pre>
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Dev Setup
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Each team member will need to do this on their local machine.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Create a postgres db
 
-### `npm run eject`
+Create a user in postgres named `ctp_user` with the password `ctp_pass`:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+> This only needs to be done one time on your machine
+> You can create additional users if you want to.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+createuser -P -s -e ctp_user
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Create a separate db for this project:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+createdb -h localhost -U ctp_user app2019_development
+```
 
-## Learn More
+> You will create a DB for each project you start based on this repo. For other projects change `app2019_development` to the new apps database name.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+*For more details see this [installing postgres guide](https://github.com/CUNYTechPrep/ctp2019/blob/master/guides/installing-postgresql.md)*
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Running the app
 
-### Code Splitting
+For local development you will need two terminals open, one for the api-backend and another for the react-client.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+*Clone* this app, then:
 
-### Analyzing the Bundle Size
+```bash
+# api-backend terminal 1
+cp .env.example .env
+npm install
+npm run dev
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```bash
+# react-client terminal 2
+cd client
+npm install
+npm start
+```
 
-### Making a Progressive Web App
+- api-backend will launch at: http://localhost:8080
+- react-client will launch at: http://localhost:3000
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+> In production you will only deploy a single app. The react client will build into static files that will be served from the backend.
 
-### Advanced Configuration
+## Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+### Setting up Heroku
 
-### Deployment
+Install the heroku cli if you don't already have it. 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+> You will also need a heroku account
+> And this will only be done once on your machine
 
-### `npm run build` fails to minify
+```bash
+# on mac
+brew install heroku/brew/heroku
+heroku login
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Create a Heroku project
+
+Next, `cd` into this project directory and create a project:
+
+```bash
+heroku create cool-appname
+heroku addons:create heroku-postgresql:hobby-dev
+```
+
+> This will deploy your apps to https://cool-appname.herokuapp.com, assuming that it is not taken already.
+
+> You only need to do this once per app
+
+### Deploying the app
+
+Whenever you want to update the app run this command.
+
+```bash
+git push heroku master
+```
+
+> This command deploys your master branch. You can change that and deploy a different branch such as: `git push heroku development`
+
