@@ -10,7 +10,7 @@ import PostsListPage from './pages/PostsListPage';
 import PostFormPage from './pages/PostFormPage';
 import ShowPostPage from './pages/ShowPostPage';
 import AboutUsPage from './pages/AboutUsPage';
-
+import Login from './components/Login/Registration'
 import './App.css';
 
 
@@ -28,6 +28,9 @@ function Navigation(props) {
           <NavLink className="nav-link" exact to="/about-us">
             About Us
           </NavLink>
+        </li>
+        <li className="nav-item">
+          <Login />
         </li>
       </ul>
     </nav>
