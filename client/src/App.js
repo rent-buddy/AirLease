@@ -12,7 +12,8 @@ import ShowPostPage from './pages/ShowPostPage';
 import AboutUsPage from './pages/AboutUsPage';
 
 import './App.css';
-
+import Listing from './components/Listing';
+import sampleListingPicture from './components/logo.svg'
 
 function Navigation(props) {
   return (
@@ -48,6 +49,7 @@ class App extends React.Component {
                 <Route path="/about-us" component={AboutUsPage} />
                 <Route path="/" component={PostsListPage} />
               </Switch>
+              <Listing name="ListingName" price="$12.00" image={sampleListingPicture}/>
             </div>
           </div>
         </Router>
