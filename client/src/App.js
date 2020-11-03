@@ -11,9 +11,10 @@ import PostFormPage from './pages/PostFormPage';
 import ShowPostPage from './pages/ShowPostPage';
 import AboutUsPage from './pages/AboutUsPage';
 import HomePage from './pages/HomePage';
-
+import Login from './components/Login/Registration'
 import './App.css';
-
+import Listing from './components/Listing';
+import sampleListingPicture from './components/logo.svg'
 
 function Navigation(props) {
   return (
@@ -29,6 +30,9 @@ function Navigation(props) {
           <NavLink className="nav-link" exact to="/about-us">
             About Us
           </NavLink>
+        </li>
+        <li className="nav-item">
+          <Login />
         </li>
       </ul>
     </nav>
@@ -49,6 +53,7 @@ class App extends React.Component {
                 <Route path="/about-us" component={AboutUsPage} />
                 <Route path="/" component={HomePage} />
               </Switch>
+              <Listing name="ListingName" price="$12.00" image={sampleListingPicture}/>
             </div>
           </div>
         </Router>
