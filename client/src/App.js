@@ -10,9 +10,11 @@ import PostsListPage from './pages/PostsListPage';
 import PostFormPage from './pages/PostFormPage';
 import ShowPostPage from './pages/ShowPostPage';
 import AboutUsPage from './pages/AboutUsPage';
+import HomePage from './pages/HomePage';
 import Login from './components/Login/Registration'
 import './App.css';
-
+import Listing from './components/Listing';
+import sampleListingPicture from './components/logo.svg'
 
 function Navigation(props) {
   return (
@@ -49,8 +51,9 @@ class App extends React.Component {
                 <Route path="/posts/new" component={PostFormPage} />
                 <Route path="/posts/:id" component={ShowPostPage} />
                 <Route path="/about-us" component={AboutUsPage} />
-                <Route path="/" component={PostsListPage} />
+                <Route path="/" component={HomePage} />
               </Switch>
+              <Listing name="ListingName" price="$12.00" image={sampleListingPicture}/>
             </div>
           </div>
         </Router>
