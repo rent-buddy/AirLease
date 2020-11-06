@@ -17,6 +17,6 @@ function Listing(props) {
         </Card>
     
     );
-}
+} 
 
 export default Listing;
