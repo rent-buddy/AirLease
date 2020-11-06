@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
           notEmpty: true,
         },
       },
-
+      //might change it to something later
       picture: {
         type: DataTypes.BLOB,
       },
