@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 import Login from './Login';
 import SignUp from './SignUp';
 class Registration extends Component {
