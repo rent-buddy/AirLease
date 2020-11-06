@@ -2,14 +2,14 @@
   "development": {
     "username": "ctp_user",
     "password": "ctp_pass",
-    "database": "airLease_development",
+    "database": "app2019_development",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
     "username": "ctp_user",
     "password": "ctp_pass",
-    "database": "airLease_test",
+    "database": "app2019_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
