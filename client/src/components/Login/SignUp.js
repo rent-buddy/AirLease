@@ -12,7 +12,7 @@ class SignUp extends Component {
   };
 
   signUp = (event) => {
-    fetch('/api/auth/', {
+    fetch('/api/auth/signup', {
       method: 'POST',
       credentials: 'include',
       headers: {
@@ -29,7 +29,7 @@ class SignUp extends Component {
         if (res.ok) {
           return res.json();
         }
-        throw new Error('Content validation');
+        throw new Error(res.json());
       })
       .catch((err) => {
         this.setState({ error: err });
@@ -45,8 +45,8 @@ class SignUp extends Component {
 
   render() {
     return (
-      <form onSubmit={this.signUp}>
-        {this.state.error}
+      <form onClick={this.signUp}>
+        {console.log(this.state.error)}
         <Modal id="login" show={this.props.show} onHide={this.props.onRequestClose}>
           <Modal.Header className="text-center">
             <h4 className="w-100 font-weight-bold">Sign Up</h4>
@@ -60,6 +60,7 @@ class SignUp extends Component {
                 <input
                   type="text"
                   id="firstName"
+                  value={this.state.firstName}
                   className="form-control"
                   placeholder="First Name"
                   onChange={this.fieldChanged('firstName')}
@@ -69,6 +70,7 @@ class SignUp extends Component {
                 <input
                   type="text"
                   id="lastName"
+                  value={this.state.lastName}
                   className="form-control"
                   placeholder="Last Name"
                   onChange={this.fieldChanged('lastName')}
@@ -78,6 +80,7 @@ class SignUp extends Component {
             <input
               type="email"
               id="email"
+              value={this.state.email}
               className="form-control mb-4"
               placeholder="Email"
               onChange={this.fieldChanged('email')}
@@ -85,6 +88,7 @@ class SignUp extends Component {
             <input
               type="password"
               id="password"
+              value={this.state.password}
               className="form-control mb-4"
               placeholder="Create a Password"
               onChange={this.fieldChanged('password')}

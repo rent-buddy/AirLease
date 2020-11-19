@@ -16,13 +16,14 @@ module.exports = (sequelize, DataTypes) => {
       email: {
         type: DataTypes.STRING,
         unique: true,
+        allowNull: false,
         validate: {
           isEmail: true,
         },
       },
       passwordHash: { type: DataTypes.STRING },
       password: {
-        type: DataTypes.STRING,
+        type: DataTypes.VIRTUAL,
         validate: {
           isLongEnough: function (val) {
             if (val.length < 7) {
@@ -44,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   User.beforeSave((user, options) => {
-    if (password) {
+    if (user.password) {
       user.passwordHash = bcrypt.hashSync(user.password, 10);
     }
   });
