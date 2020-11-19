@@ -14,9 +14,9 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  let { content } = req.body;
+  let { name, price, description, userId } = req.body;
 
-  Item.create({ content })
+  Item.create({ name, price, description, userId })
     .then((item) => {
       res.status(201).json(item);
     })
@@ -38,20 +38,31 @@ router.get('/:id', (req, res) => {
 
 router.put('/:id', (req, res) => {
   const { id } = req.params;
+  let { name, price, description, userId } = req.body;
+
   Item.findByPk(id).then((item) => {
     if (!item) {
-      return res.sendStatus(404);
+      Item.create({ name, price, description, userId })
+        .then((item) => {
+          res.status(201).json(item);
+        })
+        .catch((err) => {
+          res.status(400).json(err);
+        });
+    } else {
+      item.name = name;
+      item.price = price;
+      item.description = description;
+      item.userId = userId;
+      item
+        .save()
+        .then((item) => {
+          res.json(item);
+        })
+        .catch((err) => {
+          res.status(400).json(err);
+        });
     }
-
-    item.content = req.body.content;
-    item
-      .save()
-      .then((item) => {
-        res.json(item);
-      })
-      .catch((err) => {
-        res.status(400).json(err);
-      });
   });
 });
 
