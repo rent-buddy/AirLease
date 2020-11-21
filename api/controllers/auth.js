@@ -3,6 +3,7 @@ const { User } = require('../models');
 //const passport = require('../middlewares/authentication');
 
 router.post('/signup', (req, res) => {
+  console.log(req.body.firstName);
   User.create({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -10,7 +11,8 @@ router.post('/signup', (req, res) => {
     password: req.body.password,
   })
     .then((user) => {
-      req.login(user, () => res.status(201).json(user));
+      //req.login(user, () => res.status(201).json(user));
+      res.status(201).json(user);
     })
     .catch((err) => {
       res.status(400).json({ msg: 'Failed Signup', err });
