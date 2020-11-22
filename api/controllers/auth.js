@@ -3,7 +3,6 @@ const { User } = require('../models');
 //const passport = require('../middlewares/authentication');
 
 router.post('/signup', (req, res) => {
-  console.log(req.body.firstName);
   User.create({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
