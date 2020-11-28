@@ -48,7 +48,6 @@ class SignUp extends Component {
 
   render() {
     return (
-     
         <Modal id="login" show={this.props.show && !this.state.success} onHide={this.props.onRequestClose || this.state.success}>
            <form onSubmit={this.signUp}>
           <Modal.Header className="text-center">
@@ -107,7 +106,6 @@ class SignUp extends Component {
               Login
             </Button>
           </Modal.Footer>
-        
       </form>
       </Modal>
     );
