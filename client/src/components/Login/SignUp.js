@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
-import { Button, Modal } from 'react-bootstrap';
+import { Button, Modal, Form } from 'react-bootstrap';
 
 class SignUp extends Component {
   state = {
@@ -12,6 +12,8 @@ class SignUp extends Component {
   };
 
   signUp = (event) => {
+    event.preventDefault();
+    console.log("sign yoooo")
     fetch('/api/auth/signup', {
       method: 'POST',
       credentials: 'include',
@@ -46,8 +48,9 @@ class SignUp extends Component {
 
   render() {
     return (
-      <form onClick={this.signUp}>
+     
         <Modal id="login" show={this.props.show && !this.state.success} onHide={this.props.onRequestClose || this.state.success}>
+           <form onSubmit={this.signUp}>
           <Modal.Header className="text-center">
             <h4 className="w-100 font-weight-bold">Sign Up</h4>
             <button type="button" className="close" onClick={this.props.onRequestClose} aria-label="Close">
@@ -96,6 +99,7 @@ class SignUp extends Component {
             <Button type="submit" className="btn-block" >
               Sign Up
             </Button>
+            <button type = "submit">Test</button>
           </Modal.Body>
           <Modal.Footer>
             <p>Already a Member?</p>
@@ -103,8 +107,9 @@ class SignUp extends Component {
               Login
             </Button>
           </Modal.Footer>
-        </Modal>
+        
       </form>
+      </Modal>
     );
   }
 }
