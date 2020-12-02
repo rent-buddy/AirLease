@@ -50,6 +50,8 @@ class App extends React.Component {
               <Switch>
                 <Route path="/posts/new" component={PostFormPage} />
                 <Route path="/posts/:id" component={ShowPostPage} />
+                // <Route path="/listings/new" component={ListingPage} />
+                <Route path="/listings/:id" component={ListingPage} />
                 <Route path="/about-us" component={AboutUsPage} />
                 <Route path="/" component={HomePage} />
               </Switch>
