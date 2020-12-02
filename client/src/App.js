@@ -1,26 +1,23 @@
 import React from 'react';
-import { 
-  BrowserRouter as Router, 
-  Switch, 
-  Route, 
-  Link,
-  NavLink
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link, NavLink } from 'react-router-dom';
 import PostsListPage from './pages/PostsListPage';
 import PostFormPage from './pages/PostFormPage';
 import ShowPostPage from './pages/ShowPostPage';
 import AboutUsPage from './pages/AboutUsPage';
 import HomePage from './pages/HomePage';
-import Login from './components/Login/Registration'
+import Login from './components/Login/Registration';
 import './App.css';
 import Listing from './components/Listing';
-import sampleListingPicture from './components/logo.svg'
+import sampleListingPicture from './components/logo.svg';
+import SearchResultsPage from './pages/SearchResultsPage';
 
 function Navigation(props) {
   return (
-    <nav className="navbar navbar-expand-sm navbar-dark bg-dark shadow mb-3">
-      <Link className="navbar-brand" to="/">Micro Blog</Link>
-      <ul className="navbar-nav mr-auto">
+    <nav className="navbar navbar-expand-sm navbar-dark bg-dark shadow mb-3 row">
+      <Link className="navbar-brand col-auto" to="/">
+        Micro Blog
+      </Link>
+      <ul className="navbar-nav col-auto">
         <li className="nav-item">
           <NavLink className="nav-link" exact to="/posts/new">
             Create a Micro Post
@@ -31,10 +28,19 @@ function Navigation(props) {
             About Us
           </NavLink>
         </li>
-        <li className="nav-item">
-          <Login />
-        </li>
       </ul>
+      <form className="col" action="/search"> 
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search for..." name="q"></input>
+          <span class="input-group-btn">
+            <button class="btn btn-secondary" type="submit">Go</button>
+          </span>
+        </div>
+      </form>
+      <div className="col-auto">
+        <Login/>
+      </div>
+        
     </nav>
   );
 }
@@ -51,6 +57,7 @@ class App extends React.Component {
                 <Route path="/posts/new" component={PostFormPage} />
                 <Route path="/posts/:id" component={ShowPostPage} />
                 <Route path="/about-us" component={AboutUsPage} />
+                <Route path="/search" component={SearchResultsPage} />
                 <Route path="/" component={HomePage} />
               </Switch>
               <Listing name="ListingName" price="$12.00" image={sampleListingPicture}/>
@@ -60,6 +67,5 @@ class App extends React.Component {
     );
   }
 }
-
 
 export default App;
