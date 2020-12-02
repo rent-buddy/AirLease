@@ -57,8 +57,5 @@
     "*.{js,ts,tsx}": [
       "eslint --fix"
     ]
-  },
-  "workspaces": [
-    "client"
-  ]
+  }
 }

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
-import { Button, Modal } from 'react-bootstrap';
+import { Button, Modal, Form } from 'react-bootstrap';
 
 class SignUp extends Component {
   state = {
@@ -8,10 +8,12 @@ class SignUp extends Component {
     lastName: '',
     email: '',
     password: '',
-    error: '',
+    success: false,
   };
 
   signUp = (event) => {
+    event.preventDefault();
+    console.log("sign yoooo")
     fetch('/api/auth/signup', {
       method: 'POST',
       credentials: 'include',
@@ -19,7 +21,7 @@ class SignUp extends Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        fistName: this.state.firstName,
+        firstName: this.state.firstName,
         lastName: this.state.lastName,
         email: this.state.email,
         password: this.state.password,
@@ -27,6 +29,7 @@ class SignUp extends Component {
     })
       .then((res) => {
         if (res.ok) {
+          this.setState({success: true});
           return res.json();
         }
         throw new Error(res.json());
@@ -45,9 +48,8 @@ class SignUp extends Component {
 
   render() {
     return (
-      <form onClick={this.signUp}>
-        {console.log(this.state.error)}
-        <Modal id="login" show={this.props.show} onHide={this.props.onRequestClose}>
+        <Modal id="login" show={this.props.show && !this.state.success} onHide={this.props.onRequestClose || this.state.success}>
+           <form onSubmit={this.signUp}>
           <Modal.Header className="text-center">
             <h4 className="w-100 font-weight-bold">Sign Up</h4>
             <button type="button" className="close" onClick={this.props.onRequestClose} aria-label="Close">
@@ -93,9 +95,10 @@ class SignUp extends Component {
               placeholder="Create a Password"
               onChange={this.fieldChanged('password')}
             ></input>
-            <Button type="submit" className="btn-block">
+            <Button type="submit" className="btn-block" >
               Sign Up
             </Button>
+            <button type = "submit">Test</button>
           </Modal.Body>
           <Modal.Footer>
             <p>Already a Member?</p>
@@ -103,8 +106,8 @@ class SignUp extends Component {
               Login
             </Button>
           </Modal.Footer>
-        </Modal>
       </form>
+      </Modal>
     );
   }
 }
