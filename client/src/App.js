@@ -21,7 +21,7 @@ import RegistrationPage from './pages/RegistrationPage';
 function Navigation(props) {
   //mb-3 remove nav spave between jumbotron
   return (
-    <nav className="navbar navbar-expand-sm navbar-dark bg-dark shadow mb-3">
+    <nav className="navbar navbar-expand-sm navbar-dark bg-dark shadow">
       <Link className="navbar-brand" to="/">Micro Blog</Link>
       <ul className="navbar-nav mr-auto">
         <li className="nav-item">
