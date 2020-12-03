@@ -5,10 +5,12 @@ import PostFormPage from './pages/PostFormPage';
 import ShowPostPage from './pages/ShowPostPage';
 import AboutUsPage from './pages/AboutUsPage';
 import HomePage from './pages/HomePage';
-import Login from './components/Login/Registration';
+import Login from './components/Login/AuthBotton'
+import PrivateRoute from './components/PrivateRoute';
 import './App.css';
 import Listing from './components/Listing';
-import sampleListingPicture from './components/logo.svg';
+import sampleListingPicture from './components/logo.svg'
+import RegistrationPage from './pages/RegistrationPage';
 import SearchResultsPage from './pages/SearchResultsPage';
 
 function Navigation(props) {
@@ -49,18 +51,20 @@ function Navigation(props) {
 class App extends React.Component {
   render() {
     return (
-      <Router>
-        <Navigation />
-        <div className="container-fluid text-center">
-          <div className="row justify-content-center">
-            <Switch>
-              <Route path="/posts/new" component={PostFormPage} />
-              <Route path="/posts/:id" component={ShowPostPage} />
-              <Route path="/about-us" component={AboutUsPage} />
-              <Route path="/search" component={SearchResultsPage} />
-              <Route path="/" component={HomePage} />
-            </Switch>
-            {/* <Listing name="ListingName" price="$12.00" image={sampleListingPicture} /> */}
+        <Router>
+          <Navigation />
+          <div className="container-fluid text-center">
+            <div className="row justify-content-center">
+              <Switch>
+                <Route path="/registration" component={RegistrationPage} />
+                <PrivateRoute path="/posts/new" component={PostFormPage} />
+                <Route path="/posts/:id" component={ShowPostPage} />
+                <Route path="/about-us" component={AboutUsPage} />
+                <Route path="/search" component={SearchResultsPage} />
+                <Route path="/" component={HomePage} />
+              </Switch>
+              <Listing name="ListingName" price="$12.00" image={sampleListingPicture}/>
+            </div>
           </div>
         </div>
       </Router>
