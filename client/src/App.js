@@ -14,8 +14,9 @@ import RegistrationPage from './pages/RegistrationPage';
 import SearchResultsPage from './pages/SearchResultsPage';
 
 function Navigation(props) {
+  //mb-3 remove nav spave between jumbotron
   return (
-    <nav className="navbar navbar-expand-sm navbar-dark bg-dark shadow mb-3 row">
+    <nav className="navbar navbar-expand-sm navbar-dark bg-dark shadow row">
       <Link className="navbar-brand col-auto" to="/">
         AirLease
       </Link>
