@@ -2,8 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05fa23ee-0948-4b58-8a44-1aa5721a566a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/pages/ListingPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/controllers/posts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/middlewares/authentication.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/models/post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/Login/AuthBotton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/PrivateRoute.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/RegistrationPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/SearchResultsPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/services/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/items.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/items.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Listing.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Listing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Login/Registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Login/Registration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Login/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Login/SignUp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

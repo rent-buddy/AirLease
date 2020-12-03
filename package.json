@@ -13,12 +13,18 @@
   "author": "Edgardo Molina",
   "license": "ISC",
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
+    "@typescript-eslint/parser": "^4.6.1",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.5.3",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.1.4",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "pg": "^8.4.1",
     "pg-hstore": "^2.3.3",
     "prettier": "^2.1.2",
@@ -27,9 +33,6 @@
     "sqlite3": "^4.2.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.8.1",
-    "@typescript-eslint/parser": "^4.8.1",
-    "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
     "eslint": "^7.13.0",
     "eslint-config-airbnb": "^18.2.1",
