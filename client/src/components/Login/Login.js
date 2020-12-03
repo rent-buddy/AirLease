@@ -7,15 +7,15 @@ function Log(props){
           <Modal id = "login" show = {props.show} onHide = {props.onRequestClose}>
             <Modal.Header className = "text-center">
                 <h4 className="w-100 font-weight-bold">Login</h4>
-                <button type="button" class="close"  onClick = {props.onRequestClose} aria-label="Close">
+                <button type="button" className="close"  onClick = {props.onRequestClose} aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </Modal.Header>
             <Modal.Body>
-                <div class="md-form mb-4">
+                <div className="md-form mb-4">
                     <input type="text" id="defaultForm-user" className="form-control validate" placeholder = "Email"></input>
                 </div>
-                <div class="md-form mb-4">
+                <div className="md-form mb-4">
                     <input type="password" id="defaultForm-pass" className="form-control validate" placeholder = "Password"></input>
                 </div>
                 <Button type="submit" className="btn-block">Login</Button>
