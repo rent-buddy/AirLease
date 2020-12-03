@@ -11,10 +11,12 @@ import PostFormPage from './pages/PostFormPage';
 import ShowPostPage from './pages/ShowPostPage';
 import AboutUsPage from './pages/AboutUsPage';
 import HomePage from './pages/HomePage';
-import Login from './components/Login/Registration'
+import Login from './components/Login/AuthBotton'
+import PrivateRoute from './components/PrivateRoute';
 import './App.css';
 import Listing from './components/Listing';
 import sampleListingPicture from './components/logo.svg'
+import RegistrationPage from './pages/RegistrationPage';
 
 function Navigation(props) {
   return (
@@ -48,7 +50,8 @@ class App extends React.Component {
           <div className="container-fluid text-center">
             <div className="row justify-content-center">
               <Switch>
-                <Route path="/posts/new" component={PostFormPage} />
+                <Route path="/registration" component={RegistrationPage} />
+                <PrivateRoute path="/posts/new" component={PostFormPage} />
                 <Route path="/posts/:id" component={ShowPostPage} />
                 <Route path="/about-us" component={AboutUsPage} />
                 <Route path="/" component={HomePage} />

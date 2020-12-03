@@ -8,6 +8,12 @@ class Registration extends Component {
     signupOpened: false,
   };
 
+componentDidMount(){
+  if(this.props.renderAsPage){
+    this.openModal('login')();
+  }
+}
+
   openModal = (modalType) => () => {
     if (modalType === 'login') {
       this.setState({
@@ -34,8 +40,8 @@ class Registration extends Component {
     return (
       <>
         <Button onClick={this.openModal('login')}> Login/Sign Up</Button>
-        <Login show={loginOpened} onRequestClose={this.closeModal()} onClick={this.openModal('signup')} />
-        <SignUp show={signupOpened} onRequestClose={this.closeModal()} onClick={this.openModal('login')} />
+        <Login show={loginOpened} renderAsPage = {this.props.renderAsPage} onRequestClose={this.closeModal()} onClick={this.openModal('signup')} />
+        <SignUp show={signupOpened} renderAsPage = {this.props.renderAsPage} onRequestClose={this.closeModal()} onClick={this.openModal('login')} />
       </>
     );
   }
