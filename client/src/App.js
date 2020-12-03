@@ -15,12 +15,12 @@ function Navigation(props) {
   return (
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark shadow mb-3 row">
       <Link className="navbar-brand col-auto" to="/">
-        Micro Blog
+        AirLease
       </Link>
       <ul className="navbar-nav col-auto">
         <li className="nav-item">
           <NavLink className="nav-link" exact to="/posts/new">
-            Create a Micro Post
+            Create a Listing
           </NavLink>
         </li>
         <li className="nav-item">
@@ -29,41 +29,41 @@ function Navigation(props) {
           </NavLink>
         </li>
       </ul>
-      <form className="col" action="/search"> 
+      <form className="col" action="/search">
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Search for..." name="q"></input>
           <span class="input-group-btn">
-            <button class="btn btn-secondary" type="submit">Go</button>
+            <button class="btn btn-secondary" type="submit">
+              Go
+            </button>
           </span>
         </div>
       </form>
       <div className="col-auto">
-        <Login/>
+        <Login />
       </div>
-        
     </nav>
   );
 }
 
-
 class App extends React.Component {
   render() {
     return (
-        <Router>
-          <Navigation />
-          <div className="container-fluid text-center">
-            <div className="row justify-content-center">
-              <Switch>
-                <Route path="/posts/new" component={PostFormPage} />
-                <Route path="/posts/:id" component={ShowPostPage} />
-                <Route path="/about-us" component={AboutUsPage} />
-                <Route path="/search" component={SearchResultsPage} />
-                <Route path="/" component={HomePage} />
-              </Switch>
-              <Listing name="ListingName" price="$12.00" image={sampleListingPicture}/>
-            </div>
+      <Router>
+        <Navigation />
+        <div className="container-fluid text-center">
+          <div className="row justify-content-center">
+            <Switch>
+              <Route path="/posts/new" component={PostFormPage} />
+              <Route path="/posts/:id" component={ShowPostPage} />
+              <Route path="/about-us" component={AboutUsPage} />
+              <Route path="/search" component={SearchResultsPage} />
+              <Route path="/" component={HomePage} />
+            </Switch>
+            {/* <Listing name="ListingName" price="$12.00" image={sampleListingPicture} /> */}
           </div>
-        </Router>
+        </div>
+      </Router>
     );
   }
 }
