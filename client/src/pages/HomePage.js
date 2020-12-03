@@ -5,7 +5,7 @@ import ListingsGroup from '../components/ListingsGroup';
 function HomePage(props) {
   return (
     <div>
-      <Jumbotron>
+      <Jumbotron className= 'p-0'>
         <Carousel>
           <Carousel.Item interval={2000}>
             <img
