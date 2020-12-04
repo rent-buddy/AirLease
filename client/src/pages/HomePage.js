@@ -5,13 +5,13 @@ import ListingsGroup from '../components/ListingsGroup';
 function HomePage(props) {
   return (
     <div>
-      <Jumbotron>
+      <Jumbotron className= 'p-0'>
         <Carousel>
           <Carousel.Item interval={2000}>
             <img
               className="d-block w-100"
               height={500}
-              src="https://files.slack.com/files-pri/T016TJTJSFN-F01G13ERQ2Z/image.png"
+              src="https://www.thoughtco.com/thmb/C7RiS4QG5TXcBG2d_Sh9i4hFpg0=/3620x2036/smart/filters:no_upscale()/close-up-of-clothes-hanging-in-row-739240657-5a78b11f8e1b6e003715c0ec.jpg"
               alt="First slide"
             />
             <Carousel.Caption>
