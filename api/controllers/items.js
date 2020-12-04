@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 const { Item } = db;
-
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 //    GET    /items
 //    POST   /items
 //    GET    /items/:id
@@ -11,6 +12,31 @@ const { Item } = db;
 
 router.get('/', (req, res) => {
   Item.findAll({}).then((items) => res.json(items));
+});
+
+router.get('/homepageListings', (req, res) => {
+  Item.findAll({ limit: 6 }).then((items) => res.json(items));
+});
+
+router.get('/search/:query', (req, res) => {
+  let { query } = req.params;
+  // console.log(query);
+  Item.findAll({
+    where: {
+      [Op.or]: [
+        {
+          name: {
+            [Op.iLike]: '%' + query + '%',
+          },
+        },
+        {
+          description: {
+            [Op.iLike]: '%' + query + '%',
+          },
+        },
+      ],
+    },
+  }).then((items) => res.json(items));
 });
 
 router.post('/', (req, res) => {
