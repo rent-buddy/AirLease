@@ -1,18 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from 'react-router-dom';
-import PostsListPage from './pages/PostsListPage';
 import PostFormPage from './pages/PostFormPage';
 import ShowPostPage from './pages/ShowPostPage';
-import AboutUsPage from './pages/AboutUsPage';
 import HomePage from './pages/HomePage';
 import Login from './components/Login/AuthBotton';
 import PrivateRoute from './components/PrivateRoute';
 import './App.css';
-import Listing from './components/Listing';
-import sampleListingPicture from './components/logo.svg';
 import RegistrationPage from './pages/RegistrationPage';
 import SearchResultsPage from './pages/SearchResultsPage';
-import { Dropdown, DropdownButton } from 'react-bootstrap';
+import { Dropdown} from 'react-bootstrap';
 function Navigation(props) {
   //mb-3 remove nav spave between jumbotron
   return (
@@ -31,9 +27,8 @@ function Navigation(props) {
         <Dropdown.Toggle variant="success" id="dropdown-basic" style={{ backgroundColor: '#F93800' }}>
           Categories
         </Dropdown.Toggle>
-
         <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+          <Dropdown.Item> <Link to = "/posts/new" className='w-100'>Clothes</Link></Dropdown.Item>
           <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
           <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
         </Dropdown.Menu>
@@ -66,7 +61,6 @@ class App extends React.Component {
               <Route path="/registration" component={RegistrationPage} />
               <PrivateRoute path="/posts/new" component={PostFormPage} />
               <Route path="/posts/:id" component={ShowPostPage} />
-              <Route path="/about-us" component={AboutUsPage} />
               <Route path="/search" component={SearchResultsPage} />
               <Route path="/" component={HomePage} />
             </Switch>
