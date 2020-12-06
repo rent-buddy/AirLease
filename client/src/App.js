@@ -8,7 +8,10 @@ import PrivateRoute from './components/PrivateRoute';
 import './App.css';
 import RegistrationPage from './pages/RegistrationPage';
 import SearchResultsPage from './pages/SearchResultsPage';
-import { Dropdown} from 'react-bootstrap';
+import { Dropdown } from 'react-bootstrap';
+import ClothPage from './pages/ClothPage';
+import ElectronicPage from './pages/ElectronicPage';
+import FurniturePage from './pages/FurniturePage';
 function Navigation(props) {
   //mb-3 remove nav spave between jumbotron
   return (
@@ -16,21 +19,31 @@ function Navigation(props) {
       <Link className="navbar-brand col-auto" to="/">
         <span style={{ color: '#F93800' }}>AirLease</span>
       </Link>
-      <ul className="navbar-nav col-auto">
-        <li className="nav-item">
-          <NavLink className="nav-link" exact to="/posts/new">
-            Create a Listing
-          </NavLink>
-        </li>
-      </ul>
-      <Dropdown size="sm">
+
+      <NavLink className="nav-link col-auto" exact to="/posts/new">
+        Create a Listing
+      </NavLink>
+
+      <Dropdown className="col-auto" size="sm">
         <Dropdown.Toggle variant="success" id="dropdown-basic" style={{ backgroundColor: '#F93800' }}>
           Categories
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          <Dropdown.Item> <Link to = "/posts/new" className='w-100'>Clothes</Link></Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+          <Dropdown.Item>
+            <Link to="/cloth">
+              <div>Cloth</div>
+            </Link>
+          </Dropdown.Item>
+          <Dropdown.Item>
+            <Link to="/electronic">
+              <div>Electronic</div>
+            </Link>
+          </Dropdown.Item>
+          <Dropdown.Item>
+            <Link to="/furniture">
+              <div>Furniture</div>
+            </Link>
+          </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
       <form className="col" action="/search">
@@ -43,9 +56,7 @@ function Navigation(props) {
           </span>
         </div>
       </form>
-      <div className="col-auto">
-        <Login />
-      </div>
+      <Login />
     </nav>
   );
 }
@@ -62,15 +73,18 @@ class App extends React.Component {
               <PrivateRoute path="/posts/new" component={PostFormPage} />
               <Route path="/posts/:id" component={ShowPostPage} />
               <Route path="/search" component={SearchResultsPage} />
+              <Route path="/cloth" component={ClothPage} />
+              <Route path="/electronic" component={ElectronicPage} />
+              <Route path="/furniture" component={FurniturePage} />
               <Route path="/" component={HomePage} />
             </Switch>
           </div>
         </div>
         <footer>
           <p>
-            Focusing on the experience of thrifting since 2020 <br></br>An ecommerce site where you can thrift items and place
-            your own items up for sale. <br></br>Sell and exchange furniture, clothes, electronics, and more! Schedule a local
-            meet up (or ship) to exchange merchandise. <br></br>Option to donate unused/unwanted items.
+            Focusing on the experience of thrifting since 2020 <br></br>An ecommerce site where you can thrift items and
+            place your own items up for sale. <br></br>Sell and exchange furniture, clothes, electronics, and more!
+            Schedule a local meet up (or ship) to exchange merchandise. <br></br>Option to donate unused/unwanted items.
           </p>
         </footer>
       </Router>

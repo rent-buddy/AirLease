@@ -18,6 +18,11 @@ router.get('/homepageListings', (req, res) => {
   Item.findAll({ limit: 6 }).then((items) => res.json(items));
 });
 
+router.get('/category/:cate', (req, res) => {
+  let { cate } = req.params;
+  Item.findAll({ where: { category: cate } }).then((items) => res.json(items));
+});
+
 router.get('/search/:query', (req, res) => {
   let { query } = req.params;
   // console.log(query);
