@@ -1,17 +1,26 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link, NavLink, Redirect } from 'react-router-dom';
+import PostsListPage from './pages/PostsListPage';
 import PostFormPage from './pages/PostFormPage';
 import ShowPostPage from './pages/ShowPostPage';
 import HomePage from './pages/HomePage';
 import Login from './components/Login/AuthBotton';
+import SearchBar from './components/SearchBar';
 import PrivateRoute from './components/PrivateRoute';
 import './App.css';
+import Listing from './components/Listing';
+import sampleListingPicture from './components/logo.svg';
 import RegistrationPage from './pages/RegistrationPage';
 import SearchResultsPage from './pages/SearchResultsPage';
+import Cart from './pages/Cart';
+import AboutUsPage from './pages/AboutUsPage';
 import { Dropdown } from 'react-bootstrap';
 import ClothPage from './pages/ClothPage';
 import ElectronicPage from './pages/ElectronicPage';
 import FurniturePage from './pages/FurniturePage';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 function Navigation(props) {
   //mb-3 remove nav spave between jumbotron
   return (
@@ -19,7 +28,6 @@ function Navigation(props) {
       <Link className="navbar-brand col-auto" to="/">
         <span style={{ color: '#F93800' }}>AirLease</span>
       </Link>
-
       <NavLink className="nav-link col-auto" exact to="/posts/new">
         Create a Listing
       </NavLink>
@@ -46,17 +54,15 @@ function Navigation(props) {
           </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
-      <form className="col" action="/search">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search for..." name="q"></input>
-          <span class="input-group-btn">
-            <button class="btn btn-secondary" type="submit">
-              Go
-            </button>
-          </span>
-        </div>
-      </form>
-      <Login />
+      <div className="col">
+        <SearchBar />
+      </div>
+      <Link to="/cart">
+        <FontAwesomeIcon icon={faShoppingCart} color="white" />
+      </Link>
+      <div className="col-auto">
+        <Login />
+      </div>
     </nav>
   );
 }
@@ -72,6 +78,8 @@ class App extends React.Component {
               <Route path="/registration" component={RegistrationPage} />
               <PrivateRoute path="/posts/new" component={PostFormPage} />
               <Route path="/posts/:id" component={ShowPostPage} />
+              <Route path="/about-us" component={AboutUsPage} />
+              <Route path="/cart" component={Cart} />
               <Route path="/search" component={SearchResultsPage} />
               <Route path="/cloth" component={ClothPage} />
               <Route path="/electronic" component={ElectronicPage} />
