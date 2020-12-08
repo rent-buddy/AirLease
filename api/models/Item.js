@@ -30,7 +30,13 @@ module.exports = (sequelize, DataTypes) => {
       },
       //might change it to something later
       picture: {
-        type: DataTypes.BLOB,
+        type: DataTypes.STRING,
+      },
+      category: {
+        type: DataTypes.STRING,
+        validate: {
+          notEmpty: true,
+        },
       },
     },
     {

@@ -21,3 +21,18 @@
   color: #09d3ac;
 }
 */
+
+.react-icons {
+  vertical-align: middle;
+}
+
+footer{
+  position: absolute bottom;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  background-color: #2F4F4F;
+  color: white;
+  text-align: center;
+}

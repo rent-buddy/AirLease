@@ -1,32 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05fa23ee-0948-4b58-8a44-1aa5721a566a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/controllers/posts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/middlewares/authentication.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/models/post.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Login/AuthBotton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/PrivateRoute.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/RegistrationPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/SearchResultsPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/services/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
+    <list default="true" id="882308fa-54b8-466b-9e58-c4f990c3a575" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/images/icons/stars-active.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/images/icons/starts-disable.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/CreateListingPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/styles/ListingPageStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/controllers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/controllers/items.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/items.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/Item.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/Item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Listing.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Listing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ListingsGroup.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ListingsGroup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Login/Registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Login/Registration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Login/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Login/SignUp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/ListingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/ListingPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,82 +23,43 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="TypeScript JSX File" />
-        <option value="TypeScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1iqhgmH863A2189DpJ8XnQFEgwf" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1lGBkg7domM0z2mnXBCtZVbCBTN" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.eslintrc.js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/pages" />
     <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.standard" value="project" />
-    <property name="node.js.selected.package.eslint" value="yarn:package.json:eslint" />
-    <property name="node.js.selected.package.standard" value="" />
-    <property name="nodejs_interpreter_path" value="node" />
-    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\anton\WebstormProjects\AirLease\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
-    <property name="ts.external.directory.path" value="C:\Users\anton\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\202.7660.23\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\anton\WebstormProjects\AirLease\api\controllers" />
       <recent name="C:\Users\anton\WebstormProjects\AirLease\client\src\pages" />
-      <recent name="C:\Users\anton\WebstormProjects\AirLease\client\src\components" />
-      <recent name="C:\Users\anton\WebstormProjects\AirLease" />
+      <recent name="C:\Users\anton\WebstormProjects\AirLease\client\src" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="05fa23ee-0948-4b58-8a44-1aa5721a566a" name="Default Changelist" comment="" />
-      <created>1602641143102</created>
+      <changelist id="882308fa-54b8-466b-9e58-c4f990c3a575" name="Default Changelist" comment="" />
+      <created>1607213693049</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1602641143102</updated>
-      <workItem from="1602641144364" duration="2824000" />
-      <workItem from="1602800840218" duration="731000" />
-      <workItem from="1602976928615" duration="1097000" />
-      <workItem from="1603125548806" duration="345000" />
-      <workItem from="1603125900044" duration="3662000" />
-      <workItem from="1603405266584" duration="27000" />
-      <workItem from="1603482244540" duration="5552000" />
-      <workItem from="1603733193572" duration="3236000" />
-      <workItem from="1603837495629" duration="942000" />
-      <workItem from="1604093243499" duration="630000" />
-      <workItem from="1604356980565" duration="2407000" />
-      <workItem from="1604619583279" duration="5000" />
-      <workItem from="1604624374926" duration="2674000" />
-      <workItem from="1605037329447" duration="4422000" />
-      <workItem from="1605227727465" duration="625000" />
-      <workItem from="1605814873440" duration="308000" />
-      <workItem from="1605815212616" duration="1432000" />
-      <workItem from="1605816736182" duration="13551000" />
-      <workItem from="1606253774320" duration="1121000" />
-      <workItem from="1606513393057" duration="3515000" />
-      <workItem from="1606857556244" duration="2889000" />
-      <workItem from="1606934904413" duration="2537000" />
-      <workItem from="1606942505987" duration="2693000" />
+      <updated>1607213693049</updated>
+      <workItem from="1607213694389" duration="7682000" />
+      <workItem from="1607286697254" duration="7437000" />
+      <workItem from="1607383394725" duration="9481000" />
     </task>
     <servers />
   </component>
@@ -117,31 +67,9 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1699" y="0" width="1720" height="1410" key="#ESLint" timestamp="1605832034920">
+    <state x="2339" y="463" key="FileChooserDialogImpl" timestamp="1607286620550">
       <screen x="0" y="0" width="5120" height="1410" />
     </state>
-    <state x="1699" y="0" width="1720" height="1410" key="#ESLint/0.0.5120.1410@0.0.5120.1410" timestamp="1605832034920" />
-    <state x="303" y="455" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603482971797">
-      <screen x="0" y="0" width="3440" height="1410" />
-    </state>
-    <state x="303" y="455" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.3440.1410@0.0.3440.1410" timestamp="1603482971797" />
-    <state x="1389" y="459" key="FileChooserDialogImpl" timestamp="1605826382589">
-      <screen x="0" y="0" width="5120" height="1410" />
-    </state>
-    <state x="933" y="459" key="FileChooserDialogImpl/0.0.3440.1410@0.0.3440.1410" timestamp="1603125895598" />
-    <state x="1389" y="459" key="FileChooserDialogImpl/0.0.5120.1410@0.0.5120.1410" timestamp="1605826382589" />
-    <state x="973" y="349" key="SettingsEditor" timestamp="1605825648025">
-      <screen x="0" y="0" width="5120" height="1410" />
-    </state>
-    <state x="654" y="349" key="SettingsEditor/0.0.3440.1410@0.0.3440.1410" timestamp="1603127732966" />
-    <state x="973" y="349" key="SettingsEditor/0.0.5120.1410@0.0.5120.1410" timestamp="1605825648025" />
-    <state x="2286" y="264" width="587" height="888" key="find.popup" timestamp="1605041788871">
-      <screen x="0" y="0" width="3440" height="1410" />
-    </state>
-    <state x="2286" y="264" width="587" height="888" key="find.popup/0.0.3440.1410@0.0.3440.1410" timestamp="1605041788871" />
-    <state x="2243" y="323" width="672" height="678" key="search.everywhere.popup" timestamp="1603734599228">
-      <screen x="0" y="0" width="3440" height="1410" />
-    </state>
-    <state x="2243" y="323" width="672" height="678" key="search.everywhere.popup/0.0.3440.1410@0.0.3440.1410" timestamp="1603734599228" />
+    <state x="2339" y="463" key="FileChooserDialogImpl/0.0.5120.1410@0.0.5120.1410" timestamp="1607286620550" />
   </component>
 </project>

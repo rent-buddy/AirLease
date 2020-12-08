@@ -29,6 +29,7 @@
     "pg-hstore": "^2.3.3",
     "prettier": "^2.1.2",
     "react-bootstrap": "^1.4.0",
+    "react-icons": "^4.1.0",
     "sequelize": "^5.22.3",
     "sqlite3": "^4.2.0"
   },

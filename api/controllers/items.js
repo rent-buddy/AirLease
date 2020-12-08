@@ -14,31 +14,36 @@ router.get('/', (req, res) => {
   Item.findAll({}).then((items) => res.json(items));
 });
 
+router.get('/homepageListings', (req, res) => {
+  Item.findAll({ limit: 6 }).then((items) => res.json(items));
+});
+
 router.get('/search/:query', (req, res) => {
-  let {query} = req.params;
+  let { query } = req.params;
   // console.log(query);
   Item.findAll({
     where: {
       [Op.or]: [
         {
           name: {
-            [Op.iLike]: '%' + query + '%'
-          }
+            [Op.iLike]: '%' + query + '%',
+          },
         },
         {
           description: {
-            [Op.iLike]: '%' + query + '%'
-          }
-        }
-      ]
-    }
+            [Op.iLike]: '%' + query + '%',
+          },
+        },
+      ],
+    },
   }).then((items) => res.json(items));
 });
 
 router.post('/', (req, res) => {
-  let { name, price, description, userId } = req.body;
+  let { name, price, description, picture, category} = req.body;
 
-  Item.create({ name, price, description, userId })
+  console.log(name);
+  Item.create({ name, price, description, picture, category, userId: req.user.id })
     .then((item) => {
       res.status(201).json(item);
     })
