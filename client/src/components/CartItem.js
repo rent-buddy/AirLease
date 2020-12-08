@@ -17,24 +17,24 @@ function CartItem(props) {
   }
   let dropDownMenu = <select onChange={props.handleQuantityChange}>{dropDownValues}</select>;
   return (
-    <Card>
+    <Card style={{ marginTop: '1em', marginBottom: '1em' }}>
       <div className="row" style={{ height: '10rem' }}>
-        <Link to={'/items/' + props.itemId} className="col-2">
+        <Link to={'/items/' + props.itemId} className="col-3" style={{ width: '100%', height: '100%' }}>
           <img
             style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-            src="https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg"
+            src={props.picture}
             alt="Card Item Image"
           ></img>
         </Link>
         <div className="col my-auto">
           <Link to={'/items/' + props.itemId}>
-            <Card.Title className="bold">{props.name}</Card.Title>
+            <Card.Title>
+              {' '}
+              <b>{props.name}</b>, <span>$</span>
+              {props.price}
+            </Card.Title>
           </Link>
           <Card.Text>
-            <p>
-              <span>$</span>
-              {props.price}
-            </p>
             <p>
               <span>Quantity: </span>
               {dropDownMenu} <span style={{ fontSize: '1.5em', fontWeight: 'lighter' }}>|</span>

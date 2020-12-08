@@ -26,7 +26,11 @@ class SearchBar extends React.Component {
           onChange={(e) => this.handleChange(e)}
         ></input>
         <span class="input-group-btn">
-          <Link to={'/search' + '?q=' + this.state.value} className="btn btn-primary">
+          <Link
+            to={'/search' + '?q=' + this.state.value}
+            className="btn btn-primary"
+            style={{ backgroundColor: '#F93800' }}
+          >
             Go
           </Link>
         </span>

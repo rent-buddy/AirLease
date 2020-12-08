@@ -39,7 +39,7 @@ componentDidMount(){
     const { loginOpened, signupOpened } = this.state;
     return (
       <>
-        <Button onClick={this.openModal('login')}> Login/Sign Up</Button>
+        <Button style = {{backgroundColor: '#F93800'}} onClick={this.openModal('login')}>Login</Button>
         <Login show={loginOpened} renderAsPage = {this.props.renderAsPage} onRequestClose={this.closeModal()} onClick={this.openModal('signup')} />
         <SignUp show={signupOpened} renderAsPage = {this.props.renderAsPage} onRequestClose={this.closeModal()} onClick={this.openModal('login')} />
       </>

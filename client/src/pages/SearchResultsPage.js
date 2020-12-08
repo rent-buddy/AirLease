@@ -23,21 +23,6 @@ class SearchResultsPage extends React.Component {
     };
   }
 
-  handleAddCart(itemId) {
-    console.log('in handle add cart ' + itemId);
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ itemId: itemId, quantity: 1 }),
-    };
-    fetch('/api/cartItems/', requestOptions)
-      .then((res) => {
-        console.log(res);
-        console.log('added');
-      })
-      .catch((err) => console.log('API ERROR: ', err));
-  }
-
   handlePageChange(pageNum) {
     this.setState({
       currentPage: pageNum,
@@ -75,7 +60,6 @@ class SearchResultsPage extends React.Component {
       firstPage = Math.max(1, lastPage - numPageButtonsPerPage + 1);
     }
     for (let pageNumber = firstPage; pageNumber <= lastPage; pageNumber++) {
-      // console.log(pageNumber);
       pageButtons.push(
         <PageButton handlePageChange={() => this.handlePageChange(pageNumber)} key={pageNumber} pageNum={pageNumber} />,
       );

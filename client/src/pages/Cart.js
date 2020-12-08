@@ -90,7 +90,7 @@ class Cart extends React.Component {
         let quantity = itemDetails.quantity;
         let price = itemDetails.item.price;
         let name = itemDetails.item.name;
-        let image = itemDetails.item.image;
+        let picture = itemDetails.item.picture;
         return (
           <CartItem
             itemId={itemId}
@@ -99,7 +99,7 @@ class Cart extends React.Component {
             quantity={quantity}
             price={price}
             name={name}
-            image={image}
+            picture={picture}
             key={ii}
           />
         );
