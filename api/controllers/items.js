@@ -15,23 +15,23 @@ router.get('/', (req, res) => {
 });
 
 router.get('/search/:query', (req, res) => {
-  let {query} = req.params;
+  let { query } = req.params;
   // console.log(query);
   Item.findAll({
     where: {
       [Op.or]: [
         {
           name: {
-            [Op.iLike]: '%' + query + '%'
-          }
+            [Op.iLike]: '%' + query + '%',
+          },
         },
         {
           description: {
-            [Op.iLike]: '%' + query + '%'
-          }
-        }
-      ]
-    }
+            [Op.iLike]: '%' + query + '%',
+          },
+        },
+      ],
+    },
   }).then((items) => res.json(items));
 });
 
