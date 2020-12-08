@@ -85,6 +85,7 @@ class Cart extends React.Component {
     if (this.state.items.length > 0) {
       // let items = this.createItems();
       let items = this.state.items.map((itemDetails, ii) => {
+        console.log(itemDetails);
         let itemId = itemDetails.itemId;
         let id = itemDetails.id;
         let quantity = itemDetails.quantity;

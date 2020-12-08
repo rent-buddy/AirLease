@@ -20,8 +20,6 @@ import ElectronicPage from './pages/ElectronicPage';
 import FurniturePage from './pages/FurniturePage';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CreateListingPage from './pages/CreateListingPage';
-import ListingPage from './pages/ListingPage';
 
 function Navigation(props) {
   //mb-3 remove nav spave between jumbotron
@@ -30,7 +28,7 @@ function Navigation(props) {
       <Link className="navbar-brand col-auto" to="/">
         <span style={{ color: '#F93800' }}>AirLease</span>
       </Link>
-      <NavLink className="nav-link col-auto" exact to="/items/new">
+      <NavLink className="nav-link col-auto" exact to="/posts/new">
         Create a Listing
       </NavLink>
 
@@ -78,8 +76,8 @@ class App extends React.Component {
           <div className="row justify-content-center">
             <Switch>
               <Route path="/registration" component={RegistrationPage} />
-              <PrivateRoute path="/items/new" component={CreateListingPage} />
-              <Route path="/items/:id" component={ListingPage} />
+              <PrivateRoute path="/posts/new" component={PostFormPage} />
+              <Route path="/posts/:id" component={ShowPostPage} />
               <Route path="/about-us" component={AboutUsPage} />
               <Route path="/cart" component={Cart} />
               <Route path="/search" component={SearchResultsPage} />

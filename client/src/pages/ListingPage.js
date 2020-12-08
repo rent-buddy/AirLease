@@ -5,6 +5,10 @@ import '../styles/ListingPageStyle.css';
 
 
 class ListingPage extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+    this.onAddToCart = this.onAddToCart.bind(this);
+  }
   state = {
     listing: {}
   }
@@ -21,7 +25,23 @@ class ListingPage extends React.Component {
   }
 
   onAddToCart() {
-    // Cart logic goes here.
+    console.log(this.state.listing);
+    fetch("/api/cartItems/" + this.state.listing.id, {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ quantity: 1 }),
+    })
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
+      .catch(err => {
+        console.log("Error:" + err);
+      })
   }
 
   render() {
@@ -68,7 +88,7 @@ class ListingPage extends React.Component {
                         <input type="text" className="form-control" value="1"/>
                     </div>
                   </div>
-                  <a href="#" className="btn  btn-primary"> <span className="text">Add to cart </span>
+                  <a href="#" className="btn  btn-primary" onClick={this.onAddToCart}> <span className="text">Add to cart </span>
                     <FaCartPlus /> </a>
               </article>
             </main>
