@@ -4,6 +4,7 @@ const expressSession = require('express-session');
 const morgan = require('morgan');
 const path = require('path');
 const db = require('./models');
+
 const passport = require('./middlewares/authentication');
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -14,7 +15,7 @@ app.use(bodyParser.json());
 // setup passport and session cookies
 app.use(
   expressSession({
-    secret: process.env.SESSION_SECRET,
+    secret: 'sjdhfsubgibf4dbfakkadfn6kdfna8ksdnkanewr',
     resave: false,
     saveUninitialized: true,
   }),
@@ -34,7 +35,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 
   // all unknown routes should be handed to our react app
-  app.get('*', function (req, res) {
+  app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
   });
 }

@@ -45,9 +45,10 @@ router.get('/search/:query', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  let { name, price, description, userId } = req.body;
+  let { name, price, description, picture, category} = req.body;
 
-  Item.create({ name, price, description, userId })
+  console.log(name);
+  Item.create({ name, price, description, picture, category, userId: req.user.id })
     .then((item) => {
       res.status(201).json(item);
     })

@@ -22,6 +22,10 @@
 }
 */
 
+.react-icons {
+  vertical-align: middle;
+}
+
 footer{
   position: absolute bottom;
   left: 0;
